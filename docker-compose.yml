@@ -1,0 +1,67 @@
+version: '3.8'
+
+networks:
+  ledger-mesh:
+    driver: bridge
+
+volumes:
+  shared-ledger-data:
+    driver: local
+
+services:
+  # 1. High-Concurrent Web Ingestion Layer
+  go-api-gateway:
+    build:
+      context: ./go_gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - ledger-mesh
+    environment:
+      - ELIXIR_NODE_ADDR=elixir-core:4000
+      - APP_ENV=production
+    restart: always
+
+  # 2. Fault-Tolerant Actor System & Assembly Bridge
+  elixir-core:
+    build:
+      context: ./ledger_core
+      dockerfile: Dockerfile
+    networks:
+      - ledger-mesh
+    volumes:
+      - shared-ledger-data:/var/ledger/storage
+    environment:
+      - SECRET_MASK=122859182371
+      - COBOL_ENGINE_PATH=/var/ledger/bin/ledger_engine
+    depends_on:
+      - go-api-gateway
+    restart: always
+
+  # 3. Security AI Guard & Ledger Tailing Monitor
+  python-ai-guard:
+    build:
+      context: ./ai_fraud_guard
+      dockerfile: Dockerfile
+    networks:
+      - ledger-mesh
+    volumes:
+      - shared-ledger-data:/var/ledger/storage
+    environment:
+      - LOG_FILE_PATH=/var/ledger/storage/ledger_audit.log
+      - DETECTION_CONTAMINATION=0.01
+    depends_on:
+      - elixir-core
+    restart: always
+
+  # 4. Static Frontend SaaS App Delivery Hub
+  web-dashboard:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./web_dashboard:/usr/share/nginx/html
+    networks:
+      - ledger-mesh
+    restart: always

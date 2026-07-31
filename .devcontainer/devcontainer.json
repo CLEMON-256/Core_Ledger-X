@@ -1,0 +1,28 @@
+{
+  "name": "CoreLedger-X Polyglot Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/dotnet-core:1": {
+      "version": "8.0"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        "rust-lang.rust-analyzer",
+        "ms-dotnettools.csdevkit",
+        "ms-python.python",
+        "JakeHatcher.elm",
+        "bitlang.cobol",
+        "ElixirLSP.elixir-ls",
+        "mtxr.sqltools"
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'All language compilers are ready!'"
+}

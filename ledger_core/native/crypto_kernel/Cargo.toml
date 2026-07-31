@@ -1,0 +1,12 @@
+[package]
+name = "crypto_kernel"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "crypto_kernel"
+# Both cdylib and rlib are required for clean compilation and symbol tables
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+rustler = "0.36.2"

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CoreLedger-X SaaS Console</title>
+    <!-- Include the compiled Elm code module bundle -->
+    <script src="main.js"></script>
+</head>
+<body style="margin: 0; background: #f4f6f9;">
+    <div id="elm-saas-root"></div>
+    
+    <script>
+        // 1. Initialize the Elm application on the DOM node target
+        var app = Elm.Main.init({
+            node: document.getElementById('elm-saas-root')
+        });
+
+        // 2. Intercept outgoing SaaS actions (e.g. redirect to billing links)
+        app.ports.requestPaymentCheckout.subscribe(function(tenantId) {
+            console.log("Redirecting tenant to Stripe Checkout Session for ID:", tenantId);
+            alert("SaaS Demo: Simulating checkout payment tunnel processing for: " + tenantId);
+            
+            // Simulating a successful transaction callback from a billing webhook
+            setTimeout(function() {
+                console.log("Subscription updated event received from billing engine webhook.");
+                // Push data back through Elm's ports securely
+                app.ports.listenTenantUpgrades.send("ENTERPRISE");
+            }, 2500);
+        });
+    </script>
+</body>
+</html>

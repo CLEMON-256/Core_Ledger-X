@@ -1,0 +1,15 @@
+/workspaces/Core_Ledger-X/csharp_compliance/bin/Debug/net10.0/csharp_compliance
+/workspaces/Core_Ledger-X/csharp_compliance/bin/Debug/net10.0/csharp_compliance.deps.json
+/workspaces/Core_Ledger-X/csharp_compliance/bin/Debug/net10.0/csharp_compliance.runtimeconfig.json
+/workspaces/Core_Ledger-X/csharp_compliance/bin/Debug/net10.0/csharp_compliance.dll
+/workspaces/Core_Ledger-X/csharp_compliance/bin/Debug/net10.0/csharp_compliance.pdb
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.AssemblyInfoInputs.cache
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.AssemblyInfo.cs
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.csproj.CoreCompileInputs.cache
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.sourcelink.json
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.dll
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/refint/csharp_compliance.dll
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.pdb
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/csharp_compliance.genruntimeconfig.cache
+/workspaces/Core_Ledger-X/csharp_compliance/obj/Debug/net10.0/ref/csharp_compliance.dll
